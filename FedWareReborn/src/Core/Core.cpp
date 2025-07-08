@@ -32,10 +32,10 @@ static inline bool CheckDXLevel()
 	auto mat_dxlevel = U::ConVars.FindVar("mat_dxlevel");
 	if (mat_dxlevel->GetInt() < 90)
 	{
-		//const char* sMessage = "You are running with graphics options that Amalgam does not support.\n-dxlevel must be at least 90.";
-		const char* sMessage = "You are running with graphics options that Amalgam does not support.\nIt is recommended for -dxlevel to be at least 90.";
+		//const char* sMessage = "You are running with graphics options that FedWare Reborn does not support.\n-dxlevel must be at least 90.";
+		const char* sMessage = "You are running with graphics options that FedWare Reborn does not support.\nIt is recommended for -dxlevel to be at least 90.";
 		U::Core.AppendFailText(sMessage);
-		SDK::Output("Amalgam", sMessage, { 175, 150, 255 }, true, true);
+		SDK::Output("FedWare Reborn", sMessage, { 175, 150, 255 }, true, true);
 		//return false;
 	}
 
@@ -58,7 +58,7 @@ void CCore::LogFailText()
 		file.open(F::Configs.m_sConfigPath + "fail_log.txt", std::ios_base::app);
 		file << ssFailStream.str() + "\n\n\n";
 		file.close();
-		ssFailStream << "Logged to Amalgam\\fail_log.txt. ";
+		ssFailStream << "Logged to FedWareReborn\fail_log.txt. ";
 	}
 	catch (...) {}
 
@@ -101,7 +101,7 @@ void CCore::Load()
 	F::Configs.LoadConfig(F::Configs.m_sCurrentConfig, false);
 	F::Configs.m_bConfigLoaded = true;
 
-	SDK::Output("Amalgam", "Loaded", { 175, 150, 255 }, true, true, true);
+	SDK::Output("FedWare Reborn", "Loaded", { 175, 150, 255 }, true, true, true);
 }
 
 void CCore::Loop()
@@ -153,5 +153,5 @@ void CCore::Unload()
 		return;
 	}
 
-	SDK::Output("Amalgam", "Unloaded", { 175, 150, 255 }, true, true);
+	SDK::Output("FedWare Reborn", "Unloaded", { 175, 150, 255 }, true, true);
 }

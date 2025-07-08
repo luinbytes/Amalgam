@@ -69,11 +69,11 @@ void CPlayerlistCore::SavePlayerlist()
 		write_json(F::Configs.m_sCorePath + "Players.json", writeTree);
 
 		F::PlayerUtils.m_bSave = false;
-		SDK::Output("Amalgam", "Saved playerlist", { 175, 150, 255 }, true, true, true);
+		SDK::Output("FedWare Reborn", "Saved playerlist", { 175, 150, 255 }, true, true, true);
 	}
 	catch (...)
 	{
-		SDK::Output("Amalgam", "Save playerlist failed", { 175, 150, 255, 127 }, true, true);
+		SDK::Output("FedWare Reborn", "Save playerlist failed", { 175, 150, 255, 127 }, true, true);
 	}
 }
 
@@ -230,10 +230,10 @@ void CPlayerlistCore::LoadPlayerlist()
 		}
 
 		F::PlayerUtils.m_bLoad = false;
-		SDK::Output("Amalgam", "Loaded playerlist", { 175, 150, 255 }, true, true, true);
+		SDK::Output("FedWare Reborn", "Loaded playerlist", { 175, 150, 255 }, true, true, true);
 	}
 	catch (...)
 	{
-		SDK::Output("Amalgam", "Load playerlist failed", { 175, 150, 255, 127 }, true, true);
+		SDK::Output("FedWare Reborn", "Load playerlist failed", { 175, 150, 255, 127 }, true, true);
 	}
 }

@@ -171,8 +171,8 @@ public:
 namespace Vars
 {
 	NAMESPACE_BEGIN(Menu)
-		CVar(CheatTitle, "Cheat title", std::string("Amalgam"), VISUAL | DROPDOWN_AUTOUPDATE);
-		CVar(CheatTag, "Cheat tag", std::string("[Amalgam]"), VISUAL);
+		CVar(CheatTitle, "Cheat title", std::string("FedWare Reborn"), VISUAL | DROPDOWN_AUTOUPDATE);
+		CVar(CheatTag, "Cheat tag", std::string("[FedWare Reborn]"), VISUAL);
 		CVar(MenuPrimaryKey, "Primary key", VK_INSERT, NOBIND);
 		CVar(MenuSecondaryKey, "Secondary key", VK_F3, NOBIND);
 
@@ -1056,7 +1056,7 @@ namespace Vars
 			CVarEnum(MatchGroup, "Match group", 0, NONE, nullptr,
 				VA_LIST("Special Event", "MvM Mann Up", "Competitive", "Casual", "MvM Boot Camp"),
 				SpecialEvent, MvMMannUp, Competitive, Casual, MvMBootCamp);
-			CVar(MapText, "Map text", std::string("Amalgam"));
+			CVar(MapText, "Map text", std::string("FedWare Reborn"));
 			CVar(GroupSize, "Group size", 1337, SLIDER_MIN, 0, 6);
 		SUBNAMESPACE_END(Steam);
 	NAMESPACE_END(Misc);

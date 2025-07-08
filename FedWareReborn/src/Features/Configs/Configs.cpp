@@ -240,7 +240,7 @@ void CConfigs::LoadJson(boost::property_tree::ptree& mapTree, std::string sName,
 
 CConfigs::CConfigs()
 {
-	m_sConfigPath = std::filesystem::current_path().string() + "\\Amalgam\\";
+	m_sConfigPath = std::filesystem::current_path().string() + "\\FedWareReborn\\";
 	m_sVisualsPath = m_sConfigPath + "Visuals\\";
 	m_sCorePath = m_sConfigPath + "Core\\";
 	m_sMaterialsPath = m_sConfigPath + "Materials\\";
@@ -312,7 +312,7 @@ CConfigs::CConfigs()
 		}\
 	}\
 	else if (!(pVar->m_iFlags & NOSAVE))\
-		SDK::Output("Amalgam", std::format("{} not found", pVar->m_sName).c_str(), { 175, 150, 255, 127 }, true, true);\
+		SDK::Output("FedWare Reborn", std::format("{} not found", pVar->m_sName).c_str(), { 175, 150, 255, 127 }, true, true);\
 }
 #define LoadMain(type, tree) if (IsType(type)) LoadCond(type, tree)
 
@@ -368,11 +368,11 @@ bool CConfigs::SaveConfig(const std::string& sConfigName, bool bNotify)
 		write_json(m_sConfigPath + sConfigName + m_sConfigExtension, writeTree);
 		m_sCurrentConfig = sConfigName; m_sCurrentVisuals = "";
 		if (bNotify)
-			SDK::Output("Amalgam", std::format("Config {} saved", sConfigName).c_str(), { 175, 150, 255 }, true, true, true);
+			SDK::Output("FedWare Reborn", std::format("Config {} saved", sConfigName).c_str(), { 175, 150, 255 }, true, true, true);
 	}
 	catch (...)
 	{
-		SDK::Output("Amalgam", "Save config failed", { 175, 150, 255, 127 }, true, true);
+		SDK::Output("FedWare Reborn", "Save config failed", { 175, 150, 255, 127 }, true, true);
 		return false;
 	}
 
@@ -487,11 +487,11 @@ bool CConfigs::LoadConfig(const std::string& sConfigName, bool bNotify)
 
 		m_sCurrentConfig = sConfigName; m_sCurrentVisuals = "";
 		if (bNotify)
-			SDK::Output("Amalgam", std::format("Config {} loaded", sConfigName).c_str(), { 175, 150, 255 }, true, true, true);
+			SDK::Output("FedWare Reborn", std::format("Config {} loaded", sConfigName).c_str(), { 175, 150, 255 }, true, true, true);
 	}
 	catch (...)
 	{
-		SDK::Output("Amalgam", "Load config failed", { 175, 150, 255, 127 }, true, true);
+		SDK::Output("FedWare Reborn", "Load config failed", { 175, 150, 255, 127 }, true, true);
 		return false;
 	}
 
@@ -531,11 +531,11 @@ bool CConfigs::SaveVisual(const std::string& sConfigName, bool bNotify)
 
 		write_json(m_sVisualsPath + sConfigName + m_sConfigExtension, writeTree);
 		if (bNotify)
-			SDK::Output("Amalgam", std::format("Visual config {} saved", sConfigName).c_str(), { 175, 150, 255 }, true, true, true);
+			SDK::Output("FedWare Reborn", std::format("Visual config {} saved", sConfigName).c_str(), { 175, 150, 255 }, true, true, true);
 	}
 	catch (...)
 	{
-		SDK::Output("Amalgam", "Save visuals failed", { 175, 150, 255, 127 }, true, true);
+		SDK::Output("FedWare Reborn", "Save visuals failed", { 175, 150, 255, 127 }, true, true);
 		return false;
 	}
 	return true;
@@ -578,11 +578,11 @@ bool CConfigs::LoadVisual(const std::string& sConfigName, bool bNotify)
 
 		m_sCurrentVisuals = sConfigName;
 		if (bNotify)
-			SDK::Output("Amalgam", std::format("Visual config {} loaded", sConfigName).c_str(), { 175, 150, 255 }, true, true, true);
+			SDK::Output("FedWare Reborn", std::format("Visual config {} loaded", sConfigName).c_str(), { 175, 150, 255 }, true, true, true);
 	}
 	catch (...)
 	{
-		SDK::Output("Amalgam", "Load visuals failed", { 175, 150, 255, 127 }, true, true);
+		SDK::Output("FedWare Reborn", "Load visuals failed", { 175, 150, 255, 127 }, true, true);
 		return false;
 	}
 	return true;
@@ -658,11 +658,11 @@ void CConfigs::DeleteVisual(const std::string& sConfigName, bool bNotify)
 		std::filesystem::remove(m_sVisualsPath + sConfigName + m_sConfigExtension);
 
 		if (bNotify)
-			SDK::Output("Amalgam", std::format("Visual config {} deleted", sConfigName).c_str(), { 175, 150, 255 }, true, true, true);
+			SDK::Output("FedWare Reborn", std::format("Visual config {} deleted", sConfigName).c_str(), { 175, 150, 255 }, true, true, true);
 	}
 	catch (...)
 	{
-		SDK::Output("Amalgam", "Remove visuals failed", { 175, 150, 255, 127 }, true, true);
+		SDK::Output("FedWare Reborn", "Remove visuals failed", { 175, 150, 255, 127 }, true, true);
 	}
 }
 
@@ -693,10 +693,10 @@ void CConfigs::ResetVisual(const std::string& sConfigName, bool bNotify)
 		SaveVisual(sConfigName, false);
 
 		if (bNotify)
-			SDK::Output("Amalgam", std::format("Visual config {} reset", sConfigName).c_str(), { 175, 150, 255 }, true, true, true);
+			SDK::Output("FedWare Reborn", std::format("Visual config {} reset", sConfigName).c_str(), { 175, 150, 255 }, true, true, true);
 	}
 	catch (...)
 	{
-		SDK::Output("Amalgam", "Reset visuals failed", { 175, 150, 255, 127 }, true, true);
+		SDK::Output("FedWare Reborn", "Reset visuals failed", { 175, 150, 255, 127 }, true, true);
 	}
 }

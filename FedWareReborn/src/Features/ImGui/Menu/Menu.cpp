@@ -1742,7 +1742,7 @@ void CMenu::MenuLogs(int iTab)
 									{
 										if (sInput.empty() && bHasAlias)
 										{
-											F::Output.AliasChanged(tPlayer.m_sName, "Removed", F::PlayerUtils.m_mPlayerAliases[tPlayer.m_uFriendsID]);
+																							F::Output.AliasChanged(tPlayer.m_sName, "Removed", F::PlayerUtils.m_mPlayerAliases[tPlayer.m_uFriendsID]);
 
 											auto it = F::PlayerUtils.m_mPlayerAliases.find(tPlayer.m_uFriendsID);
 											if (it != F::PlayerUtils.m_mPlayerAliases.end())
@@ -2363,7 +2363,7 @@ void CMenu::MenuLogs(int iTab)
 							}
 
 							F::PlayerUtils.m_bSave = true;
-							SDK::Output("Amalgam", "Imported playerlist", { 175, 150, 255 }, true, true, true);
+							SDK::Output("FedWare Reborn", "Imported playerlist", { 175, 150, 255 }, true, true, true);
 
 							CloseCurrentPopup();
 						}
@@ -2394,11 +2394,11 @@ void CMenu::MenuLogs(int iTab)
 							F::Configs.m_sCorePath + std::format("Backup{}.json", iBackupCount + 1),
 							std::filesystem::copy_options::overwrite_existing
 						);
-						SDK::Output("Amalgam", "Saved backup playerlist", { 175, 150, 255 }, true, true, true);
+						SDK::Output("FedWare Reborn", "Saved backup playerlist", { 175, 150, 255 }, true, true, true);
 					}
 					catch (...)
 					{
-						SDK::Output("Amalgam", "Failed to backup playerlist", { 175, 150, 255, 127 }, true, true, true);
+						SDK::Output("FedWare Reborn", "Failed to backup playerlist", { 175, 150, 255, 127 }, true, true, true);
 					}
 				}
 			}
