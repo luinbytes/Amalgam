@@ -34,7 +34,7 @@
 This is a personal fork of Amalgam containing denied or unwanted features, or just stuff I wanted to add :)
 
 [![GitHub Repo stars](https://img.shields.io/github/stars/luinbytes/FedWare-Reborn)](/../../stargazers)
-[![Discord](https://img.shields.io/discord/1227898008373297223?logo=Discord&label=discord)](https://discord.gg/RbP9DfkUhe)
+[![Discord](https://img.shields.io/discord/1280919597180260475?logo=Discord&label=discord)](https://discord.gg/V4w2zVZJ3g)
 [![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/luinbytes/FedWare-Reborn/msbuild.yml?branch=master)](/../../actions)
 [![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/m/luinbytes/FedWare-Reborn)](/../../commits/)
 
