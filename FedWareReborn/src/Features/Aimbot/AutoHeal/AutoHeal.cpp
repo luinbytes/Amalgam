@@ -556,9 +556,29 @@ void CAutoHeal::AutoVaccinator(CTFPlayer* pLocal, CWeaponMedigun* pWeapon, CUser
 	};
 
 	std::vector<CTFPlayer*> vTargets = { pLocal };
+	if (Vars::Aimbot::Healing::PreferFriends.Value) {
+		for (auto pEntity : H::Entities.GetGroup(EGroupType::PLAYERS_TEAMMATES)) {
+			auto pPlayer = pEntity->As<CTFPlayer>();
+			if (pPlayer && pPlayer != pLocal && (H::Entities.IsFriend(pPlayer->entindex()) || H::Entities.InParty(pPlayer->entindex()))) {
+				vTargets.push_back(pPlayer);
+			}
+		}
+	}
 	if (auto pTarget = pWeapon->m_hHealingTarget()->As<CTFPlayer>(); pTarget &&
 		(!Vars::Aimbot::Healing::FriendsOnly.Value || H::Entities.IsFriend(pTarget->entindex()) || H::Entities.InParty(pTarget->entindex())))
-		vTargets.push_back(pTarget);
+	{
+		// Check if pTarget is already in vTargets to avoid duplicates
+		bool found = false;
+		for (const auto& existingTarget : vTargets) {
+			if (existingTarget == pTarget) {
+				found = true;
+				break;
+			}
+		}
+		if (!found) {
+			vTargets.push_back(pTarget);
+		}
+	}
 
 	for (auto pTarget : vTargets)
 		GetDangers(pTarget, true, vResistDangers[MEDIGUN_BULLET_RESIST].first, vResistDangers[MEDIGUN_BLAST_RESIST].first, vResistDangers[MEDIGUN_FIRE_RESIST].first);

@@ -200,8 +200,9 @@ void CMenu::MenuAimbot(int iTab)
 				{
 					FToggle(Vars::Aimbot::Healing::AutoHeal, FToggleEnum::Left);
 					FToggle(Vars::Aimbot::Healing::FriendsOnly, FToggleEnum::Right);
-					FToggle(Vars::Aimbot::Healing::AutoVaccinator, FToggleEnum::Left);
-					FToggle(Vars::Aimbot::Healing::ActivateOnVoice, FToggleEnum::Right);
+										FToggle(Vars::Aimbot::Healing::AutoVaccinator, FToggleEnum::Left);
+					FToggle(Vars::Aimbot::Healing::PreferFriends, FToggleEnum::Right);
+					FToggle(Vars::Aimbot::Healing::ActivateOnVoice, FToggleEnum::Left);
 				} EndSection();
 				if (Vars::Debug::Options.Value)
 				{
